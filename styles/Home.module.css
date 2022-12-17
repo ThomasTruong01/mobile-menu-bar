@@ -1,4 +1,7 @@
 .container {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #222327;
   padding: 0 2rem;
 }
 
@@ -10,6 +13,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: #ffffff;
 }
 
 .footer {

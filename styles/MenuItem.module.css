@@ -1,0 +1,110 @@
+
+.menuBar ul {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 0;
+    justify-content: space-evenly;
+    /* overflow: hidden; */
+    
+}
+.menuBar a {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+}
+.list {
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+.icon {
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.5em;
+    text-align: center;
+    transition: 500ms;
+    font-size: 30px;
+    height: 30px;
+}
+.list.active .icon {
+    transform: translateY(-32px);
+}
+
+.text {
+    position: absolute;
+    font-weight: 400;
+    font-size: .75em;
+    color: var(--text-color);
+    opacity: 0;
+    transition: 500ms ease;
+    letter-spacing: 0.05em;
+    transform: translateY(20px);
+}
+.list.active .text {
+    opacity: 1;
+    transform: translateY(30px);
+}
+
+
+.list:nth-child(1).active ~ .indicator {
+    transform: translateX(calc(70px * 0));
+}
+.list:nth-child(2).active ~ .indicator {
+    transform: translateX(calc(70px * 1));
+}
+.list:nth-child(3).active ~ .indicator {
+    transform: translateX(calc(70px * 2));
+}
+.list:nth-child(4).active ~ .indicator {
+    transform: translateX(calc(70px * 3));
+}
+.list:nth-child(5).active ~ .indicator {
+    transform: translateX(calc(70px * 4));
+}
+
+
+.indicator {
+    position: absolute;
+    top: -50%;
+    height: 70px;
+    width: 70px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    border: 6px solid var(--text-color);
+    transition: 500ms;
+    
+}
+
+.indicator::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -22px;
+    height: 20px;
+    width: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 1px -10px 0 0 var(--text-color);
+    background-color: transparent;
+
+}
+.indicator::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -22px;
+    height: 20px;
+    width: 20px;
+    border-top-left-radius: 20px;
+    box-shadow: -1px -10px 0 0 var(--text-color);
+    background-color: transparent;
+
+}
